@@ -2,8 +2,8 @@ const styles = `
   :root {
     color-scheme: light;
     font-family: "Segoe UI", "Helvetica Neue", sans-serif;
-    color: #20312c;
-    background: #f5f4ee;
+    color: #263445;
+    background: #f7f3ec;
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -21,8 +21,8 @@ const styles = `
     margin: 0;
     line-height: 1.7;
     background:
-      radial-gradient(ellipse at 5% 15%, rgb(222 231 216 / 35%), transparent 28rem),
-      #f5f4ee;
+      radial-gradient(ellipse at 5% 15%, rgb(223 205 185 / 28%), transparent 28rem),
+      #f7f3ec;
   }
 
   a {
@@ -30,7 +30,7 @@ const styles = `
   }
 
   a:focus-visible {
-    outline: 3px solid #78a992;
+    outline: 3px solid #c77a59;
     outline-offset: 4px;
     border-radius: 4px;
   }
@@ -49,13 +49,13 @@ const styles = `
     position: sticky;
     top: 0;
     z-index: 5;
-    border-bottom: 1px solid rgb(32 61 50 / 8%);
-    background: rgb(245 244 238 / 92%);
+    border-bottom: 1px solid rgb(35 55 77 / 10%);
+    background: rgb(247 243 236 / 94%);
     backdrop-filter: blur(14px);
   }
 
   .brand {
-    color: #234c3c;
+    color: #23374d;
     font-size: 1.1rem;
     font-weight: 750;
     letter-spacing: -0.04em;
@@ -68,14 +68,14 @@ const styles = `
   }
 
   .nav a {
-    color: #53635d;
+    color: #5c6876;
     font-size: 0.94rem;
     text-decoration: none;
     transition: color 160ms ease;
   }
 
   .nav a:hover {
-    color: #234c3c;
+    color: #23374d;
   }
 
   .hero {
@@ -89,12 +89,12 @@ const styles = `
     margin-top: 30px;
     padding: clamp(44px, 8vw, 88px);
     overflow: hidden;
-    border: 1px solid rgb(255 255 255 / 12%);
+    border: 1px solid rgb(255 255 255 / 14%);
     border-radius: 28px;
     background:
-      radial-gradient(ellipse at 90% 5%, rgb(129 164 124 / 30%), transparent 34%),
-      linear-gradient(125deg, #18382d 0%, #244c3b 58%, #2e5b45 100%);
-    box-shadow: 0 24px 65px rgb(31 62 47 / 13%);
+      radial-gradient(ellipse at 90% 5%, rgb(190 111 78 / 28%), transparent 34%),
+      linear-gradient(125deg, #172b42 0%, #233b57 58%, #2e4a68 100%);
+    box-shadow: 0 24px 65px rgb(35 55 77 / 17%);
     color: #f9faf5;
   }
 
@@ -102,7 +102,7 @@ const styles = `
   .hero::after {
     position: absolute;
     z-index: -1;
-    border: 1px solid rgb(231 241 224 / 10%);
+    border: 1px solid rgb(255 235 218 / 12%);
     border-radius: 50%;
     content: "";
     pointer-events: none;
@@ -124,7 +124,7 @@ const styles = `
 
   .eyebrow {
     margin: 0 0 18px;
-    color: #547b68;
+    color: #a65b40;
     font-size: 0.78rem;
     font-weight: 700;
     letter-spacing: 0.14em;
@@ -132,7 +132,7 @@ const styles = `
   }
 
   .hero .eyebrow {
-    color: #b9d0b4;
+    color: #efb69e;
   }
 
   h1,
@@ -154,7 +154,7 @@ const styles = `
   .hero-copy {
     max-width: 570px;
     margin-bottom: 30px;
-    color: #d2ded5;
+    color: #d8e0e9;
     font-size: clamp(1.05rem, 2vw, 1.2rem);
   }
 
@@ -164,9 +164,9 @@ const styles = `
     align-items: center;
     justify-content: center;
     padding: 11px 21px;
-    border: 1px solid #315d49;
+    border: 1px solid #bd6848;
     border-radius: 8px;
-    background: #315d49;
+    background: #bd6848;
     color: #fff;
     font-size: 0.95rem;
     font-weight: 650;
@@ -176,69 +176,36 @@ const styles = `
 
   .button:hover {
     transform: translateY(-2px);
-    background: #234c3c;
+    background: #a95438;
   }
 
-  .hero-note {
-    position: relative;
-    display: grid;
-    min-height: 290px;
-    place-content: center;
-    padding: 36px;
+  .hero-photo {
+    height: 350px;
     overflow: hidden;
-    border: 1px solid rgb(255 255 255 / 20%);
+    padding: 9px;
+    border: 1px solid rgb(255 235 218 / 34%);
     border-radius: 24px;
-    background: linear-gradient(145deg, rgb(255 255 255 / 13%), rgb(255 255 255 / 5%));
-    box-shadow: inset 0 1px rgb(255 255 255 / 13%);
-    text-align: center;
+    background: linear-gradient(145deg, rgb(255 255 255 / 18%), rgb(255 255 255 / 6%));
+    box-shadow: 0 20px 45px rgb(8 20 34 / 30%), inset 0 1px rgb(255 255 255 / 30%);
   }
 
-  .hero-note-mark {
-    position: relative;
-    display: grid;
-    width: 132px;
-    height: 132px;
-    place-items: center;
-    margin: 0 auto 22px;
-    border: 1px solid rgb(255 255 255 / 32%);
-    border-radius: 50%;
-    background:
-      radial-gradient(circle at 34% 28%, rgb(255 255 255 / 28%), transparent 34%),
-      linear-gradient(145deg, #aac19d, #75967b);
-    box-shadow: 0 16px 35px rgb(11 35 24 / 26%), inset 0 1px rgb(255 255 255 / 40%);
-    color: #19372b;
-    font-size: 2.6rem;
-    font-weight: 800;
-    letter-spacing: -0.08em;
-  }
-
-  .hero-note-mark::after {
-    position: absolute;
-    right: -12px;
-    bottom: 7px;
-    width: 20px;
-    height: 20px;
-    border: 4px solid #244c3b;
-    border-radius: 50%;
-    background: #d9c58f;
-    content: "";
-  }
-
-  .hero-note p {
-    margin: 0;
-    color: #edf2e9;
-    font-size: 0.95rem;
-    letter-spacing: 0.04em;
+  .hero-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 17px;
+    object-fit: cover;
+    object-position: center 48%;
   }
 
   .section {
     padding: clamp(58px, 9vw, 92px) 0;
-    border-top: 1px solid rgb(32 61 50 / 11%);
+    border-top: 1px solid rgb(35 55 77 / 12%);
   }
 
   .section-heading {
     margin-bottom: 30px;
-    color: #203d32;
+    color: #23374d;
     font-size: clamp(1.8rem, 4vw, 2.5rem);
     font-weight: 650;
     letter-spacing: -0.045em;
@@ -248,7 +215,7 @@ const styles = `
   .about-copy {
     max-width: 700px;
     margin-bottom: 0;
-    color: #596861;
+    color: #5c6876;
     font-size: 1.08rem;
   }
 
@@ -263,10 +230,10 @@ const styles = `
     min-height: 116px;
     padding: 23px 25px;
     overflow: hidden;
-    border: 1px solid #e8e8df;
+    border: 1px solid #e8dfd4;
     border-radius: 14px;
     background: rgb(255 255 255 / 76%);
-    box-shadow: 0 5px 18px rgb(38 59 42 / 3%);
+    box-shadow: 0 5px 18px rgb(54 49 41 / 4%);
     transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
   }
 
@@ -276,7 +243,7 @@ const styles = `
     bottom: 0;
     left: 0;
     width: 3px;
-    background: #789477;
+    background: #c47756;
     content: "";
     opacity: 0;
     transition: opacity 180ms ease;
@@ -284,8 +251,8 @@ const styles = `
 
   .detail-card:hover {
     transform: translateY(-3px);
-    border-color: #d3ddcf;
-    box-shadow: 0 12px 28px rgb(38 59 42 / 8%);
+    border-color: #dfc7b6;
+    box-shadow: 0 12px 28px rgb(54 49 41 / 9%);
   }
 
   .detail-card:hover::before {
@@ -295,7 +262,7 @@ const styles = `
   .detail-label {
     display: block;
     margin-bottom: 7px;
-    color: #718078;
+    color: #7b756e;
     font-size: 0.78rem;
     font-weight: 700;
     letter-spacing: 0.08em;
@@ -304,7 +271,7 @@ const styles = `
 
   .detail-value {
     margin: 0;
-    color: #29483a;
+    color: #2c435b;
     font-size: 1.02rem;
     font-weight: 600;
   }
@@ -321,8 +288,8 @@ const styles = `
     border: 0;
     border-radius: 22px;
     background:
-      radial-gradient(ellipse at 95% 5%, rgb(129 164 124 / 24%), transparent 32%),
-      #e8ede3;
+      radial-gradient(ellipse at 95% 5%, rgb(198 122 89 / 18%), transparent 32%),
+      #efe5da;
   }
 
   .contact-section::after {
@@ -331,7 +298,7 @@ const styles = `
     right: 14%;
     width: 260px;
     height: 260px;
-    border: 1px solid rgb(46 91 69 / 12%);
+    border: 1px solid rgb(35 55 77 / 13%);
     border-radius: 50%;
     content: "";
     pointer-events: none;
@@ -343,13 +310,13 @@ const styles = `
 
   .contact-copy {
     margin: 0;
-    color: #596861;
+    color: #5c6876;
   }
 
   .site-footer {
     padding: 23px 0 30px;
-    border-top: 1px solid rgb(32 61 50 / 11%);
-    color: #718078;
+    border-top: 1px solid rgb(35 55 77 / 12%);
+    color: #7b756e;
     font-size: 0.88rem;
   }
 
@@ -387,8 +354,10 @@ const styles = `
       border-radius: 22px;
     }
 
-    .hero-note {
-      min-height: 230px;
+    .hero-photo {
+      width: min(100%, 350px);
+      height: 320px;
+      justify-self: center;
     }
 
     .details-grid {
@@ -420,17 +389,6 @@ const styles = `
   @media (max-width: 430px) {
     .hero {
       padding: 36px 23px;
-    }
-
-    .hero-note {
-      min-height: 205px;
-      padding: 26px;
-    }
-
-    .hero-note-mark {
-      width: 108px;
-      height: 108px;
-      font-size: 2.2rem;
     }
   }
 
@@ -505,14 +463,12 @@ heroContent.append(
   createLink("Get in touch", "tel:+639093660602", "button"),
 );
 
-const heroNote = createElement("aside", "hero-note");
-heroNote.setAttribute("aria-label", "A little about me");
-heroNote.append(
-  createElement("div", "hero-note-mark", "JM"),
-  createElement("p", "", "Curious mind.\nFuture in tech."),
-);
-heroNote.lastChild.style.whiteSpace = "pre-line";
-hero.append(heroContent, heroNote);
+const heroPhoto = createElement("div", "hero-photo");
+const profileImage = createElement("img");
+profileImage.src = "assets/profile.jpg";
+profileImage.alt = "Jhames Lawrence by the sea";
+heroPhoto.append(profileImage);
+hero.append(heroContent, heroPhoto);
 
 const about = createElement("section", "section");
 about.id = "about";

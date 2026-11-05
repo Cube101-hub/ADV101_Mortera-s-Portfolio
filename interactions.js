@@ -4,6 +4,66 @@ window.Portfolio = window.Portfolio || {};
   const prefersReducedMotion = window.matchMedia(
     "(prefers-reduced-motion: reduce)",
   ).matches;
+
+    const carousel = page.querySelector(".about-carousel");
+    if (carousel) {
+      const track = carousel.querySelector(".carousel-track");
+      const slides = Array.from(carousel.querySelectorAll(".carousel-slide"));
+      const dotsContainer = carousel.querySelector(".carousel-dots");
+      const previousButton = carousel.querySelector(".carousel-previous");
+      const nextButton = carousel.querySelector(".carousel-next");
+      let currentSlide = 0;
+      let carouselTimer;
+
+      slides.forEach((_, index) => {
+        const dot = document.createElement("button");
+        dot.type = "button";
+        dot.className = "carousel-dot";
+        dot.setAttribute("aria-label", `Go to photo ${index + 1}`);
+        dot.addEventListener("click", () => showSlide(index));
+        dotsContainer.append(dot);
+      });
+
+      function showSlide(index) {
+        currentSlide = (index + slides.length) % slides.length;
+        track.style.transform = `translateX(-${currentSlide * 100}%)`;
+        slides.forEach((slide, slideIndex) => {
+          slide.setAttribute(
+            "aria-hidden",
+            slideIndex === currentSlide ? "false" : "true",
+          );
+        });
+        Array.from(dotsContainer.children).forEach((dot, dotIndex) => {
+          if (dotIndex === currentSlide) {
+            dot.setAttribute("aria-current", "true");
+          } else {
+            dot.removeAttribute("aria-current");
+          }
+        });
+      }
+
+      function startCarousel() {
+        if (!prefersReducedMotion && slides.length > 1) {
+          carouselTimer = window.setInterval(() => showSlide(currentSlide + 1), 4500);
+        }
+      }
+
+      previousButton.addEventListener("click", () => {
+        showSlide(currentSlide - 1);
+        window.clearInterval(carouselTimer);
+        startCarousel();
+      });
+      nextButton.addEventListener("click", () => {
+        showSlide(currentSlide + 1);
+        window.clearInterval(carouselTimer);
+        startCarousel();
+      });
+      carousel.addEventListener("mouseenter", () => window.clearInterval(carouselTimer));
+      carousel.addEventListener("mouseleave", startCarousel);
+
+      showSlide(0);
+      startCarousel();
+    }
   const animatedElements = Array.from(
     page.querySelectorAll(
       ".site-header, .hero > *, .section > *, .detail-card, .site-footer > *",
@@ -87,4 +147,3 @@ window.Portfolio = window.Portfolio || {};
   window.addEventListener("resize", updateReadingProgress);
   updateReadingProgress();
 };
-

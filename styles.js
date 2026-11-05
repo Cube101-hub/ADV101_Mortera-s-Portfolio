@@ -73,7 +73,7 @@ window.Portfolio.installStyles = function installStyles() {
     }
     
     .page {
-      width: min(100% - 40px, 1040px);
+      width: calc(100% - 40px);
       margin: 0 auto;
     }
     
@@ -445,12 +445,122 @@ window.Portfolio.installStyles = function installStyles() {
       color: #5c6876;
       font-size: 1.08rem;
     }
+
+    .about-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(300px, 1fr);
+      align-items: center;
+      gap: clamp(30px, 5vw, 64px);
+    }
+
+    .about-text {
+      min-width: 0;
+    }
+
+    .about-carousel {
+      position: relative;
+      width: min(100%, 440px);
+      justify-self: center;
+      overflow: hidden;
+      border: 1px solid rgb(85 126 155 / 18%);
+      border-radius: 20px;
+      background: #e8dfd4;
+      box-shadow: 0 16px 36px rgb(54 49 41 / 10%);
+    }
+
+    .carousel-track {
+      display: flex;
+      height: 340px;
+      transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .carousel-slide {
+      width: 100%;
+      min-width: 100%;
+      height: 100%;
+      margin: 0;
+    }
+
+    .carousel-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .carousel-controls {
+      position: absolute;
+      right: 14px;
+      bottom: 14px;
+      left: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .carousel-button {
+      width: 38px;
+      height: 38px;
+      padding: 0;
+      border: 1px solid rgb(255 255 255 / 45%);
+      border-radius: 50%;
+      background: rgb(23 43 66 / 78%);
+      color: #fff;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 1.55rem;
+      line-height: 1;
+      backdrop-filter: blur(8px);
+    }
+
+    .carousel-button:hover {
+      transform: scale(1.06);
+      background: #a95438;
+    }
+
+    .carousel-dots {
+      display: flex;
+      gap: 6px;
+      min-height: 38px;
+      align-items: center;
+      padding: 0 10px;
+      border-radius: 999px;
+      background: rgb(23 43 66 / 55%);
+      backdrop-filter: blur(8px);
+    }
+
+    .carousel-dot {
+      width: 7px;
+      height: 7px;
+      padding: 0;
+      border: 0;
+      border-radius: 50%;
+      background: rgb(255 255 255 / 55%);
+      cursor: pointer;
+    }
+
+    .carousel-dot[aria-current="true"] {
+      width: 18px;
+      border-radius: 999px;
+      background: #efb69e;
+    }
     
     .details-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 16px;
       counter-reset: detail-card;
+    }
+
+    @media (min-width: 900px) {
+      .details-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .detail-card:last-child {
+        grid-column: span 2;
+      }
     }
     
     .detail-card {
@@ -601,6 +711,14 @@ window.Portfolio.installStyles = function installStyles() {
     @media (max-width: 700px) {
       .page {
         width: min(100% - 36px, 560px);
+      }
+
+      .about-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .carousel-track {
+        height: 300px;
       }
     
       .site-header {
